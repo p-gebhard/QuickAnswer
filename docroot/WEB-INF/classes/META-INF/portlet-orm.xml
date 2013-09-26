@@ -1,0 +1,141 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="it.gebhard.qa.model.impl.AnswerModelImpl">
+		<attributes>
+			<id name="answerId" />
+			<basic name="questionId" />
+			<basic name="userId" />
+			<basic name="message" />
+			<basic name="guestUserId" />
+			<basic name="created">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modified">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="accepted" />
+			<transient name="guestUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.gebhard.qa.model.impl.CommentModelImpl">
+		<attributes>
+			<id name="commentId" />
+			<basic name="questionId" />
+			<basic name="answerId" />
+			<basic name="userId" />
+			<basic name="message" />
+			<basic name="created">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.gebhard.qa.model.impl.GuestUserModelImpl">
+		<attributes>
+			<id name="guestUserId" />
+			<basic name="name" />
+			<basic name="email" />
+			<transient name="guestUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.gebhard.qa.model.impl.NotificationModelImpl">
+		<attributes>
+			<id name="notificationId" />
+			<basic name="questionId" />
+			<basic name="answerId" />
+			<basic name="userId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.gebhard.qa.model.impl.QuestionModelImpl">
+		<attributes>
+			<id name="questionId" />
+			<basic name="userId" />
+			<basic name="guestUserId" />
+			<basic name="title" />
+			<basic name="message" />
+			<basic name="viewCounter" />
+			<basic name="created">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modified">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="guestUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.gebhard.qa.model.impl.TagModelImpl">
+		<attributes>
+			<id name="tagId" />
+			<basic name="name" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="it.gebhard.qa.model.impl.VoteModelImpl">
+		<attributes>
+			<id name="voteId" />
+			<basic name="questionId" />
+			<basic name="answerId" />
+			<basic name="userId" />
+			<basic name="plusOne" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="it.gebhard.qa.model.impl.AnswerImpl" name="Answer">
+		<table name="QuickAnswer_Answer" />
+		<attributes />
+	</entity>
+	<entity class="it.gebhard.qa.model.impl.CommentImpl" name="Comment">
+		<table name="QuickAnswer_Comment" />
+		<attributes />
+	</entity>
+	<entity class="it.gebhard.qa.model.impl.GuestUserImpl" name="GuestUser">
+		<table name="QuickAnswer_GuestUser" />
+		<attributes />
+	</entity>
+	<entity class="it.gebhard.qa.model.impl.NotificationImpl" name="Notification">
+		<table name="QuickAnswer_Notification" />
+		<attributes />
+	</entity>
+	<entity class="it.gebhard.qa.model.impl.QuestionImpl" name="Question">
+		<table name="QuickAnswer_Question" />
+		<attributes />
+	</entity>
+	<entity class="it.gebhard.qa.model.impl.TagImpl" name="Tag">
+		<table name="QuickAnswer_Tag" />
+		<attributes />
+	</entity>
+	<entity class="it.gebhard.qa.model.impl.VoteImpl" name="Vote">
+		<table name="QuickAnswer_Vote" />
+		<attributes />
+	</entity>
+</entity-mappings>

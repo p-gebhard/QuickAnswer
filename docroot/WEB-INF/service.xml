@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.1.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_1_0.dtd">
+<service-builder package-path="it.gebhard.qa" auto-namespace-tables="true">
+	<author>Philipp Gebhard</author>
+	<namespace>QuickAnswer</namespace>
+	<entity name="Question" local-service="true" remote-service="false" human-name="Question" table="QuickAnswer_Question">
+ 		<column name="questionId" type="long" primary="true" />
+        <column name="userId" type="long" />
+        <column name="guestUserId" type="long" />
+		<column name="title" type="String" />
+		<column name="message" type="String" />
+		<column name="viewCounter" type="long" />
+        <column name="created" type="Date" />
+        <column name="modified" type="Date" />
+		<column name="answer" type="Collection" entity="Answer" mapping-key="questionId" />
+		<column name="comment" type="Collection" entity="Comment" mapping-key="questionId" />
+        <column name="vote" type="Collection" entity="Vote" mapping-key="questionId" />
+        <column name="tag" type="Collection" entity="Tag" mapping-table="QuestionTag" />
+        <order>
+        	<order-column name="created" order-by="desc"/>
+        	<order-column name="questionId" order-by="desc"/>
+        </order>
+	</entity>
+    <entity name="Comment" local-service="true" remote-service="false" human-name="Comment" table="QuickAnswer_Comment">
+        <column name="commentId" type="long" primary="true" />
+        <column name="questionId" type="long" />
+        <column name="answerId" type="long" />
+        <column name="userId" type="long" />
+        <column name="message" type="String" />
+        <column name="created" type="Date" />
+		<finder name="QuestionId" return-type="Collection">
+			<finder-column name="questionId" />
+		</finder>
+		<finder name="AnswerId" return-type="Collection">
+			<finder-column name="answerId" />
+		</finder>
+    </entity>
+    <entity name="Answer" local-service="true" remote-service="false" human-name="Answer" table="QuickAnswer_Answer">
+        <column name="answerId" type="long" primary="true" />
+        <column name="questionId" type="long" />
+        <column name="userId" type="long" />
+        <column name="message" type="String" />
+        <column name="guestUserId" type="long" />
+        <column name="created" type="Date" />
+        <column name="modified" type="Date" />
+        <column name="accepted" type="boolean" />
+		<column name="comments" type="Collection" entity="Comment" mapping-key="answerId" />
+		<column name="votes" type="Collection" entity="Vote" mapping-key="answerId" />
+		<finder name="QuestionId" return-type="Collection">
+			<finder-column name="questionId" />
+		</finder>
+		<finder name="Accepted" return-type="Collection">
+			<finder-column name="questionId" />
+			<finder-column name="accepted" />
+		</finder>
+    </entity>
+    <entity name="Tag" local-service="true" remote-service="false" human-name="Tag" table="QuickAnswer_Tag">
+        <column name="tagId" type="long" primary="true" />
+        <column name="name" type="String" />
+        <column name="questions" type="Collection" entity="Question" mapping-table="QuestionTag" />
+		<finder name="Name" return-type="Collection">
+			<finder-column name="name" />
+		</finder>
+    </entity>
+    <entity name="Vote" local-service="true" remote-service="false" human-name="Vote" table="QuickAnswer_Vote">
+        <column name="voteId" type="long" primary="true" />
+        <column name="questionId" type="long" />
+        <column name="answerId" type="long" />
+        <column name="userId" type="long" />
+        <column name="plusOne" type="boolean" />
+		<finder name="QuestionId" return-type="Collection">
+			<finder-column name="questionId" />
+		</finder>
+		<finder name="AnswerId" return-type="Collection">
+			<finder-column name="answerId" />
+		</finder>
+		<finder name="UserAndQuestionId" return-type="Collection">
+			<finder-column name="userId" />
+			<finder-column name="questionId" />
+		</finder>
+		<finder name="UserAndAnswerId" return-type="Collection">
+			<finder-column name="userId" />
+			<finder-column name="answerId" />
+		</finder>
+    </entity>
+    <entity name="Notification" local-service="true" remote-service="false" human-name="Notification" table="QuickAnswer_Notification">
+        <column name="notificationId" type="long" primary="true" />
+        <column name="questionId" type="long" />
+        <column name="answerId" type="long" />
+        <column name="userId" type="long" />
+		<finder name="UserId" return-type="Collection">
+			<finder-column name="userId" />
+		</finder>
+    </entity>
+    <entity name="GuestUser" local-service="true" remote-service="false" human-name="GuestUser" table="QuickAnswer_GuestUser">
+        <column name="guestUserId" type="long" primary="true" />
+        <column name="name" type="String" />
+        <column name="email" type="String" />
+		<finder name="NameAndEmail" return-type="Collection">
+			<finder-column name="name" />
+			<finder-column name="email" />
+		</finder>
+    </entity>
+</service-builder>

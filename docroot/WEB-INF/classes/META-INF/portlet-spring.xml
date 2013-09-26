@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="it.gebhard.qa.service.AnswerLocalService" class="it.gebhard.qa.service.impl.AnswerLocalServiceImpl" />
+	<bean id="it.gebhard.qa.service.persistence.AnswerPersistence" class="it.gebhard.qa.service.persistence.AnswerPersistenceImpl" parent="basePersistence" />
+	<bean id="it.gebhard.qa.service.CommentLocalService" class="it.gebhard.qa.service.impl.CommentLocalServiceImpl" />
+	<bean id="it.gebhard.qa.service.persistence.CommentPersistence" class="it.gebhard.qa.service.persistence.CommentPersistenceImpl" parent="basePersistence" />
+	<bean id="it.gebhard.qa.service.GuestUserLocalService" class="it.gebhard.qa.service.impl.GuestUserLocalServiceImpl" />
+	<bean id="it.gebhard.qa.service.persistence.GuestUserPersistence" class="it.gebhard.qa.service.persistence.GuestUserPersistenceImpl" parent="basePersistence" />
+	<bean id="it.gebhard.qa.service.NotificationLocalService" class="it.gebhard.qa.service.impl.NotificationLocalServiceImpl" />
+	<bean id="it.gebhard.qa.service.persistence.NotificationPersistence" class="it.gebhard.qa.service.persistence.NotificationPersistenceImpl" parent="basePersistence" />
+	<bean id="it.gebhard.qa.service.QuestionLocalService" class="it.gebhard.qa.service.impl.QuestionLocalServiceImpl" />
+	<bean id="it.gebhard.qa.service.persistence.QuestionPersistence" class="it.gebhard.qa.service.persistence.QuestionPersistenceImpl" parent="basePersistence" />
+	<bean id="it.gebhard.qa.service.persistence.QuestionFinder" class="it.gebhard.qa.service.persistence.QuestionFinderImpl" parent="basePersistence" />
+	<bean id="it.gebhard.qa.service.TagLocalService" class="it.gebhard.qa.service.impl.TagLocalServiceImpl" />
+	<bean id="it.gebhard.qa.service.persistence.TagPersistence" class="it.gebhard.qa.service.persistence.TagPersistenceImpl" parent="basePersistence" />
+	<bean id="it.gebhard.qa.service.VoteLocalService" class="it.gebhard.qa.service.impl.VoteLocalServiceImpl" />
+	<bean id="it.gebhard.qa.service.persistence.VotePersistence" class="it.gebhard.qa.service.persistence.VotePersistenceImpl" parent="basePersistence" />
+</beans>

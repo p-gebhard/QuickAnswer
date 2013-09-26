@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="it.gebhard.qa.model.Answer" />
+	<import class="it.gebhard.qa.model.Comment" />
+	<import class="it.gebhard.qa.model.GuestUser" />
+	<import class="it.gebhard.qa.model.Notification" />
+	<import class="it.gebhard.qa.model.Question" />
+	<import class="it.gebhard.qa.model.Tag" />
+	<import class="it.gebhard.qa.model.Vote" />
+	<class name="it.gebhard.qa.model.impl.AnswerImpl" table="QuickAnswer_Answer">
+		<cache usage="read-write" />
+		<id name="answerId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="questionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="message" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="guestUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="created" type="org.hibernate.type.TimestampType" />
+		<property name="modified" type="org.hibernate.type.TimestampType" />
+		<property name="accepted" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="it.gebhard.qa.model.impl.CommentImpl" table="QuickAnswer_Comment">
+		<cache usage="read-write" />
+		<id name="commentId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="questionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="answerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="message" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="created" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.gebhard.qa.model.impl.GuestUserImpl" table="QuickAnswer_GuestUser">
+		<cache usage="read-write" />
+		<id name="guestUserId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.gebhard.qa.model.impl.NotificationImpl" table="QuickAnswer_Notification">
+		<cache usage="read-write" />
+		<id name="notificationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="questionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="answerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="it.gebhard.qa.model.impl.QuestionImpl" table="QuickAnswer_Question">
+		<cache usage="read-write" />
+		<id name="questionId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="guestUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="message" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="viewCounter" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="created" type="org.hibernate.type.TimestampType" />
+		<property name="modified" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="it.gebhard.qa.model.impl.TagImpl" table="QuickAnswer_Tag">
+		<cache usage="read-write" />
+		<id name="tagId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="it.gebhard.qa.model.impl.VoteImpl" table="QuickAnswer_Vote">
+		<cache usage="read-write" />
+		<id name="voteId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="questionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="answerId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="plusOne" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+</hibernate-mapping>
