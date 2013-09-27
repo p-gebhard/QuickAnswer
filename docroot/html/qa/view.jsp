@@ -56,13 +56,13 @@ String searchParameter = ParamUtil.getString(renderRequest, "qa-search-input", "
 		if (accepted) answersText += " accepted";
 		answersText += "\"><span class=\"number-span\">" + String.valueOf(answers.size()) + "</span><span class=\"text-span\">" + QAPortlet.getTranslatedString("qa-answers", themeDisplay.getLocale(), renderRequest) + "</span></div>";
 		String viewsText = "<div class=\"qa-view-questions-stats-div\"><span class=\"number-span\">" + String.valueOf(question.getViewCounter()) + "</span><span class=\"text-span\">" + QAPortlet.getTranslatedString("qa-views", themeDisplay.getLocale(), renderRequest) + "</span></div>";
-		String questionTitle = "<div class=\"qa-view-questions-title-div\">" + question.getTitle() + "</div>";
+		String questionTitle = "<div class=\"qa-view-questions-row-title-div\"><div class=\"qa-view-questions-title-div\">" + question.getTitle() + "</div>";
 		String tagsText = "<div class=\"qa-view-questions-tags-div\">";
 		for (Tag tag : QuestionLocalServiceUtil.getTags(question)) {
 			tagsText += "<span>" + tag.getName() + "</span>";
 		}
-		tagsText += "</div>";
-		String timeText = QAPortlet.claculateTimeDifference(question.getCreated(), themeDisplay.getLocale(), renderRequest);
+		tagsText += "</div></div>";
+		String timeText = "<div class=\"qa-view-questions-row-created-div\"><span>" + QAPortlet.claculateTimeDifference(question.getCreated(), themeDisplay.getLocale(), renderRequest) + "</span></div";
 		%>
 		<liferay-ui:search-container-column-text name="" value="<%= votesText %>" href="<%= viewQuestionDetail %>" cssClass="qa-view-questions-row-left" />
 		<liferay-ui:search-container-column-text name="" value="<%= answersText %>" href="<%= viewQuestionDetail %>" cssClass="qa-view-questions-row-left" />

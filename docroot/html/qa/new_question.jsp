@@ -43,7 +43,7 @@ String tags = ParamUtil.getString(renderRequest, "qa-question-tags", "");
 
 	<div class="qa-save-button"> 
 		<% if (QAPortlet.isGuest(renderRequest)) { %>
-			<input type="checkbox" name="legal" value="accepted" /> <liferay-ui:message key="qa-legal-info-prefix" /> <aui:a cssClass="qa-legal-info-a" href="http://geobi.info/de/terms"><liferay-ui:message key="qa-legal-info-link" /></aui:a> <liferay-ui:message key="qa-legal-info-postfix" />
+			<input type="checkbox" name="legal" value="accepted" class="checkbox" /> <liferay-ui:message key="qa-legal-info-prefix" /> <aui:a cssClass="qa-legal-info-a" href="http://geobi.info/de/terms"><liferay-ui:message key="qa-legal-info-link" /></aui:a> <liferay-ui:message key="qa-legal-info-postfix" />
 		<% } %>
 	    <aui:button type="submit" value="qa-save-question-button" cssClass="qa-button" />
 		<aui:button name="cancelAction" type="button" value="qa-ask-question-cancel-button" onClick="<%= cancelAction %>" cssClass="qa-button" />

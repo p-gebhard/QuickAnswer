@@ -257,7 +257,7 @@ for (Answer answer : QuestionLocalServiceUtil.getAnswers(question)) {
 				</aui:field-wrapper>
 			<% } %>
 			<div class="qa-save-button">
-				<input type="checkbox" name="legal" value="" /> <liferay-ui:message key="qa-legal-info-prefix" /> <aui:a cssClass="qa-legal-info-a" href="http://geobi.info/de/terms"><liferay-ui:message key="qa-legal-info-link" /></aui:a> <liferay-ui:message key="qa-legal-info-postfix" />
+				<input type="checkbox" name="legal" value="" class="checkbox" /> <liferay-ui:message key="qa-legal-info-prefix" /> <aui:a cssClass="qa-legal-info-a" href="http://geobi.info/de/terms"><liferay-ui:message key="qa-legal-info-link" /></aui:a> <liferay-ui:message key="qa-legal-info-postfix" />
 			    <aui:button type="submit" value="qa-save-answer-button" cssClass="qa-button" />
 			</div>
 		</aui:field-wrapper>
