@@ -43,13 +43,12 @@
 }
 
 .quickanswer-portlet * {
-	font-size: 12pt;
 	font-family: cabinregular,Arial,sans-serif;
-	font-weight: normal;
 	color: #4c4c4c;
 	margin: 0px;
 	padding: 0px;
 	outline: none;
+	font-size: 11pt;
 }
 
 .quickanswer-portlet .portlet-content, .portlet-minimized .portlet-content-container {
@@ -70,22 +69,22 @@
 }
 
 .quickanswer-portlet h1 {
-	font-size: 26pt;
 	margin: 0px;
-	font-family: cabinregular, Arial, sans-serif;
 	font-weight: normal;
+	font-size: 2.5em;
 }
 
 .quickanswer-portlet h2 {
-	font-size: 16pt;
-	font-weight: bold;
-	font-family: cabinmedium, Arial, sans-serif;
-	margin-bottom: 10px;
 	clear: both;
+	font-size: 1.6em;
+	font-weight: normal;
+	padding-top: 22px;
+	margin-bottom: 30px;
+	font-family: cabinmedium,Arial,sans-serif;
 }
 
 .quickanswer-portlet h3 {
-	font-size: 14pt;
+	font-size: 1.4em;
 	font-weight: normal;
 	font-family: cabinmedium, Arial, sans-serif;
 	margin-bottom: 6px;
@@ -93,12 +92,21 @@
 }
 
 .quickanswer-portlet .qa-header-right h4 {
-	font-size: 12pt;
-	font-weight: bold;
+	font-size: 1.1em;
 	margin: 0px;
 	padding: 0px;
-	margin-left: 26px;
-	margin-bottom: 10px;
+	margin-left: 6px;
+	margin-bottom: 8px;
+}
+
+.quickanswer-portlet p {
+	font-size: 1.15em;
+	line-height: 160%;
+}
+
+.quickanswer-portlet #qa-portlet {
+	padding:  42px 40px 60px 40px;
+	background-color: white;
 }
 
 .quickanswer-portlet input, select, textarea, .aui-field-input-text {
@@ -120,11 +128,10 @@
 .quickanswer-portlet .qa-button input {
 	padding: 1px 5px 0px;
 	background: #3683c0 none !important;
-	color: white !important;
+	color: rgb(238, 238, 238) !important;
 	border: none !important;
 	font-size: 12pt !important;
-	font-weight: normal !important;
-	font-weight: normal !important;
+	font-weight: bold !important;
 	font-family: cabinmedium,Arial,sans-serif;
 	text-shadow: none !important;
 	text-transform: uppercase;
@@ -140,19 +147,22 @@
 
 .quickanswer-portlet .qa-button input:hover {
 	border: none !important;
-	color: white !important;
+	color: rgb(238, 238, 238) !important;
 }
 
 .quickanswer-portlet .aui-form-validator-message {
-	background-color: white;
+	background-color: rgb(238, 238, 238);
 	color: #4c4c4c;
 }
 
+.quickanswer-portlet .taglib-search-iterator-page-iterator-bottom {
+	padding-bottom: 1px;
+}
 
 .quickanswer-portlet #qa-header {
 	position: relative;
 	width: 100%;
-	height: 250px;
+	height: 200px;
 	float: left;
 	overflow: hidden;
 }
@@ -160,35 +170,36 @@
 .quickanswer-portlet .qa-header-left {
 	position: absolute;
 	left: 0px;
-	top: 85px;
-	max-width: 45%;
-	line-height: 22pt;
+	top: 87px;
+	max-width: 44%;
+	line-height: 160%;
+	font-size: 0.9em;
 }
 
 .quickanswer-portlet .qa-header-right {
 	position: absolute;
 	right: 0px;
 	top: 60px;
-	max-width: 55%;
+	max-width: 56%;
 }
 
 .quickanswer-portlet .qa-header-desc {
-	margin-left: 15px;
+	margin-left: 6px;
 	position: relative;
 	right: 0px;
 	float: left;
-	width: 207;
-	heigth: 142;
+	text-align: center;
 }
 
 .quickanswer-portlet .qa-header-desc span {
 	position: absolute;
-	left: 15px;
-	top: 96px;
-	width: 187px;
+	left: 3px;
+	top: 75px;
+	width: 152px;
 	margin: 0px;
 	padding: 0px;
-	line-height: 16px;
+	font-size: 0.9em;
+	line-height: 1.0em;
 }
 
 .quickanswer-portlet .qa-header-desc-img {
@@ -203,7 +214,7 @@
 .quickanswer-portlet .qa-main-header {
 	position: relative;
 	width: auto;
-	height: 52px;
+	height: 44px;
 	margin-bottom: 10px;
 	background-color: #272727;
 }
@@ -242,13 +253,14 @@
 	-ms-border-radius: 0px !important;
 	-khtml-border-radius: 0px !important;
 	border-radius: 0px !important;
+	padding: 2px;
 }
 
 
 .quickanswer-portlet .qa-sort-search {
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 8px;
+	right: 9px;
 }
 
 .quickanswer-portlet .qa-sort-search div {
@@ -256,10 +268,19 @@
 	float: left;
 }
 
+.quickanswer-portlet .qa-search-input-element {
+	margin-top: 1px;
+}
+
+.quickanswer-portlet .qa-sort-value-input {
+	font-size: 1.3em;
+	margin-top: 3px;
+}
+
 .quickanswer-portlet .qa-ask-question-button {
 	position: absolute;
-	top: 10px;
-	left: 10px;
+	top: 9px;
+	left: 9px;
 }
 
 .quickanswer-portlet tbody {
@@ -298,7 +319,7 @@
 }
 
 .quickanswer-portlet .results-row.alt td {
-	background: white;
+	background-color: #FFFFFF !important;
 }
 
 .quickanswer-portlet .qa-view-questions-row-left {
@@ -320,20 +341,22 @@
 	background-color: #a4c424;
 }
 
-.quickanswer-portlet .qa-view-questions-stats-div .number-span {
+.quickanswer-portlet .qa-view-questions-stats-div .number-span,
+.quickanswer-portlet .qa-question-stats-div .number-span {
 	position: absolute;
-	top: 8px;
+	top: 20px;
 	left: 0px;
 	width: 80px;
-	font-size: 20pt;
+	font-size: 2.2em;
 }
 
-.quickanswer-portlet .qa-view-questions-stats-div .text-span {
+.quickanswer-portlet .qa-view-questions-stats-div .text-span,
+.quickanswer-portlet .qa-question-stats-div .text-span {
 	position: absolute;
 	bottom: 6px;
 	left: 0px;
 	width: 80px;
-	font-size: 9pt;
+	font-size: 0.8em;
 	text-transform: uppercase;
 }
 
@@ -380,8 +403,9 @@
 
 .quickanswer-portlet .qa-view-questions-row-created-div span {
 	position: absolute;
-	right: 0px;
+	right: 10px;
 	bottom: 0px;
+	font-size: 0.9em;
 }
 
 .quickanswer-portlet .taglib-page-iterator {
@@ -403,34 +427,29 @@
 .quickanswer-portlet .qa-question-left {
 	margin: 0px;
 	float: left;
-	width: 30%;
+	width: 310px;
 }
 
 .quickanswer-portlet .qa-question-stats-div {
-	margin-right: 5px;
-	float: left;
-	background-color: #d9d9d9;
-	text-align: center;
-	height: 74px;
-	width: 80px;
+    background-color: rgb(217, 217, 217);
+    font-size: 10pt;
+    text-align: center;
+    height: 74px;
+    width: 80px;
+    margin-right: 6px;
+    margin-bottom: 10px;
+    position: relative;
+    float: left;
 }
-
-.quickanswer-portlet .qa-question-stats-div .number-span {
-	margin-top: 7px;
-	font-size: 20pt;
-}
-
-.quickanswer-portlet .qa-question-stats-div .text-span {
-	margin-top: 2px;
-	font-size: 9pt;
-	text-transform: uppercase;
-}
-
 
 .quickanswer-portlet .qa-question-middle {
-	margin-left: 0px;
-	float: left;
-	width: 70%;
+	margin-left: 310px;
+}
+
+.quickanswer-portlet .qa-question-middle h2 {
+	padding-top: 0px;
+	clear: none;
+	margin-bottom: 10px;
 }
 
 .quickanswer-portlet .qa-question-message {
@@ -480,7 +499,7 @@
 
 .quickanswer-portlet .qa-answer-summary {
 	float: left;
-	width: 30%;
+	width: 310px;
 }
 
 .quickanswer-portlet .qa-answer-summary-table {
@@ -490,26 +509,23 @@
 .quickanswer-portlet .qa-answer-summary-table .qa-answer-summary-1td {
 	text-align: center;
 	vertical-align: middle;
-	font-size: 16pt;
+	height: 26px;
 }
 
 .quickanswer-portlet .qa-answer-summary-table .qa-answer-summary-2td {
 	vertical-align: middle;
-}
-
-.quickanswer-portlet .qa-answer-summary-table .qa-answer-summary-2td span {
-	margin-left: 10px;
+	font-size: 0.9em;
+	padding-left: 5px;
 }
 
 .quickanswer-portlet .qa-answer-summary div {
 	margin-bottom: 6px;
-	width: 30%;
+	width: 310px;
 	vertical-align: middle;
 }
 
 .quickanswer-portlet .qa-answer-message {
-	margin-left: 350px;
-	width: 70%;
+	margin-left: 310px;
 }
 
 .quickanswer-portlet .qa-question-comments {
@@ -520,7 +536,6 @@
 .quickanswer-portlet .qa-comment-header {
 	font-size: 14pt;
 	font-weight: normal;
-	font-family: cabinmedium, Arial, sans-serif;
 	margin-bottom: 6px;
 }
 
@@ -534,8 +549,8 @@
 
 .quickanswer-portlet .qa-comment {
 	border-top: 1px solid #d9d9d9;
-	margin-top: 3px;
 	margin-bottom: 5px;
+	padding-top: 4px;
 }
 
 .quickanswer-portlet .qa-comment-form {
@@ -554,6 +569,15 @@
 
 .quickanswer-portlet .aui-field-label {
 	font-size: 18pt;
+	margin-bottom: 5px;
+}
+
+.quickanswer-portlet .aui-field-content {
+	margin-bottom: 5px;
+}
+
+.quickanswer-portlet .aui-form-validator-message {
+	margin-top: 5px;
 }
 
 .quickanswer-portlet .aui-field-wrapper-content {
@@ -616,6 +640,9 @@
 	text-decoration: underline;
 }
 
+.quickanswer-portlet .qa-ask-question-guest-login input {
+	width: 300px;
+}
 
 
 .quickanswer-portlet #qa-notification-div {

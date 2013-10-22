@@ -20,11 +20,11 @@ String searchParameter = ParamUtil.getString(renderRequest, "qa-search-input", "
 
 		<div class="qa-sort-search">
 			<div>
-				<aui:input label="" name="qa-search-input" type="text" inlineField="true" value="<%= searchParameter %>" />
+				<aui:input label="" name="qa-search-input" type="text" inlineField="true" value="<%= searchParameter %>" cssClass="qa-search-input-element" />
 				<aui:button type="submit" value="qa-search" cssClass="qa-main-header-button" />
 			</div>
 			<div>
-				<aui:select label="" name="qa-sort-value" inlineField="true" >
+				<aui:select label="" name="qa-sort-value" inlineField="true" cssClass="qa-sort-value-input" >
 					<aui:option value="newest" selected="<%= sortParameter.equals(\"newest\") %>"><liferay-ui:message key="qa-sort-newest" /></aui:option>
 					<aui:option value="unanswered" selected="<%= searchParameter.equals(\"unanswered\") %>"><liferay-ui:message key="qa-sort-unanswered" /></aui:option>
 				</aui:select>

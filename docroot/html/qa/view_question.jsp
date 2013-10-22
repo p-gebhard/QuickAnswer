@@ -128,11 +128,11 @@ for (Answer answer : QuestionLocalServiceUtil.getAnswers(question)) {
 				<% if (QAPortlet.isGuest(renderRequest)) { %>
 					<tr>
 						<td class="qa-answer-summary-1td"><img alt="" src="<%= request.getContextPath()%>/img/qa-vote-up.png" /></td>
-						<td class="qa-answer-summary-2td"><span><liferay-ui:message key="qa-view-question-vote-answer-up" /></span></td>
+						<td class="qa-answer-summary-2td"><liferay-ui:message key="qa-view-question-vote-answer-up" /></td>
 					</tr>
 					<tr>
 						<td class="qa-answer-summary-1td"><img alt="" src="<%= request.getContextPath()%>/img/qa-vote-down.png" /></td>
-						<td class="qa-answer-summary-2td"><span><liferay-ui:message key="qa-view-question-vote-answer-down" /></span></td>
+						<td class="qa-answer-summary-2td"><liferay-ui:message key="qa-view-question-vote-answer-down" /></td>
 					</tr>
 				<% } else { %>
 					<portlet:actionURL var="voteUpAnswer" name="voteUp">
@@ -145,21 +145,21 @@ for (Answer answer : QuestionLocalServiceUtil.getAnswers(question)) {
 					</portlet:actionURL>
 					<tr>
 						<td class="qa-answer-summary-1td"><a href="<%= voteUpAnswer %>"><img alt="" src="<%= request.getContextPath()%>/img/qa-vote-up.png" /></a></td>
-						<td class="qa-answer-summary-2td"><span><liferay-ui:message key="qa-view-question-vote-answer-up" /></span></td>
+						<td class="qa-answer-summary-2td"><liferay-ui:message key="qa-view-question-vote-answer-up" /></td>
 					</tr>
 					<tr>
 						<td class="qa-answer-summary-1td"><a href="<%= voteDownAnswer %>" ><img alt="" src="<%= request.getContextPath()%>/img/qa-vote-down.png" /></a></td>
-						<td class="qa-answer-summary-2td"><span><liferay-ui:message key="qa-view-question-vote-answer-down" /></span></td>
+						<td class="qa-answer-summary-2td"><liferay-ui:message key="qa-view-question-vote-answer-down" /></td>
 					</tr>
 				<% } %>
 				<tr>
 					<td class="qa-answer-summary-1td"><%= VoteLocalServiceUtil.evaluateVotesForAnswer(answer) %></td>
-					<td class="qa-answer-summary-2td"><span><liferay-ui:message key="qa-view-question-vote-count" /></span></td>
+					<td class="qa-answer-summary-2td"><liferay-ui:message key="qa-view-question-vote-count" /></td>
 				</tr>
 				<% if (answer.isAccepted()) { %>
 					<tr>
 						<td class="qa-answer-summary-1td"><img alt="" src="<%= request.getContextPath()%>/img/qa-best-answer.png" /></td>
-						<td class="qa-answer-summary-2td"><span><liferay-ui:message key="qa-view-question-is-accepted" /></span></td>
+						<td class="qa-answer-summary-2td"><liferay-ui:message key="qa-view-question-is-accepted" /></td>
 					</tr>
 				<% } else if (!QAPortlet.isGuest(renderRequest) && user.getUserId() == question.getUserId()) { %>
 					<portlet:actionURL var="acceptAnswer" name="acceptAnswer">
@@ -168,12 +168,12 @@ for (Answer answer : QuestionLocalServiceUtil.getAnswers(question)) {
 					</portlet:actionURL>
 					<tr>
 						<td class="qa-answer-summary-1td"><a href="<%= acceptAnswer %>" ><img alt="" src="<%= request.getContextPath()%>/img/qa-best-answer-candidate.png" /></a></td>
-						<td class="qa-answer-summary-2td"><span><liferay-ui:message key="qa-view-question-accept" /></span></td>
+						<td class="qa-answer-summary-2td"><liferay-ui:message key="qa-view-question-accept" /></td>
 					</tr>
 				<% } else { %>
 					<tr>
 						<td class="qa-answer-summary-1td"><img alt="" src="<%= request.getContextPath()%>/img/qa-best-answer-candidate.png" /></td>
-						<td class="qa-answer-summary-2td"><span><liferay-ui:message key="qa-view-question-is-accepted" /></span></td>
+						<td class="qa-answer-summary-2td"><liferay-ui:message key="qa-view-question-is-accepted" /></td>
 					</tr>
 				<% } %>
 			</table>
